@@ -8,7 +8,7 @@ export default class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      step: 1,
+      step: 2,
       imageUrl: 'asdf', 
       validImage: true
     }

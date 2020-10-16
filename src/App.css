@@ -12,4 +12,8 @@ div {
 
 body {
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  align-items: center;
 }
