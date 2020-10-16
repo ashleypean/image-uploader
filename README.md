@@ -1,2 +1,3 @@
-# image-uploader
-Reusable image uploader component created using HTML, CSS, and vanilla JS
+# Image Uploader Component 
+
+### Image uploader compoent built out using React.js 

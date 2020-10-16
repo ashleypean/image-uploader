@@ -1,0 +1,63 @@
+div.upload-image {
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  width: 50%;
+  height: 45%;
+  margin: auto;
+  text-align: center;
+}
+
+div.upload-image h3 {
+  color: #4F4F4F;
+  margin: 0;
+  height: 10%;
+  font-size: 1.3rem;
+}
+
+div.upload-image p {
+  color: #828282;
+  font-size: .7rem;
+  margin: 0;
+  height: 10%;
+}
+
+div.dropbox {
+  background-color: #F6F8FB;
+  border: 3px dashed #97BEF4;
+  border-radius: 8px;
+  width: 75%;
+  height: 50%;
+  padding: .5rem 2rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+}
+
+div.dropbox img {
+  height: 50%;
+  width: auto;
+}
+
+div.dropbox p {
+  color: #BDBDBD;
+  font-size: .8rem;
+  margin: 0;
+  height: 10%;
+}
+
+div.upload-image p.or {
+  margin: .8rem 0;
+  height: 5%;
+}
+
+button.choose-file {
+  background-color: #2F80ED;
+  border: none;
+  padding: .6rem 1rem;
+  border-radius: 8px;
+  color: white;
+}
