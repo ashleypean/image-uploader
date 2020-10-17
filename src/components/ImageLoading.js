@@ -4,10 +4,8 @@ import '../styles/image-loading.css'
 export default class ImageLoading extends Component {
 
   componentDidMount(){
-    const loading = () => {
-      setTimeout(this.props.nextStep, 10)
-    }
-
+    //Simulate a call to the server by loading for a few seconds 
+    const loading = () => setTimeout(this.props.nextStep, 1000)
     loading()
   }
   

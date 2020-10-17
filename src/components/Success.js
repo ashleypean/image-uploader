@@ -7,6 +7,16 @@ export default class Success extends Component {
   componentDidMount() {
     console.log('Success: ' + this.props.imageURL)
   }
+
+  handleClick(e) {
+    e.preventDefault()
+    const url = document.querySelector('.image-link').value
+    navigator.clipboard.writeText(url)
+    const copiedText = document.querySelector('.copied')
+    console.log(copiedText)
+    copiedText.style.visibility = 'visible'
+    setTimeout(() => copiedText.style.visibility = "hidden", 2000)
+  }
   render() {
 
     return (
@@ -17,9 +27,10 @@ export default class Success extends Component {
         alt="" 
         className="uploaded-image" />
         <form>
-          <input name="image-link" className="image-link" value={this.props.imageURL} placholder={this.props.imageURL} disabled />
-          <button className="copy">Copy Link</button>
+          <input type="text" className="image-link" value={this.props.imageURL} disabled />
+          <button className="copy" onClick={this.handleClick}>Copy Link</button>
         </form>
+        <p className="copied">Link Copied!</p>
     </div>
     )
   }

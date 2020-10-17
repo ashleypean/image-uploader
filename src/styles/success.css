@@ -68,4 +68,11 @@ form button:hover, form button:active {
   background-color: #0d4184;
 }
 
+p.copied {
+  visibility: hidden;
+  color: #3ABEA6;
+  text-align: center;
+  margin: 0;
+}
+
 

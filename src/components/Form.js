@@ -3,13 +3,14 @@ import UploadImage from './UploadImage.js'
 import ImageLoading from './ImageLoading.js'
 import Success from './Success.js'
 import '../styles/form.css'
+import ErrorImg from '../img/404-placeholder.jpeg'
 
 export default class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      step: 1,
-      imageURL: 'asdf', 
+      step: 3,
+      imageURL: ErrorImg, 
       validImage: true, 
       imageFile: ''
     }
