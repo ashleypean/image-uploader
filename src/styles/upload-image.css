@@ -51,14 +51,19 @@ div.dropbox p {
 }
 
 div.upload-image p.or {
-  margin: .8rem 0;
+  margin: 5% 0;
   height: 5%;
+  font-size: 1rem;
 }
 
-button.choose-file {
+label.choose-file {
   background-color: #2F80ED;
   border: none;
   padding: .6rem 1rem;
   border-radius: 8px;
   color: white;
+}
+
+input[type="file"] {
+  display:none;
 }
