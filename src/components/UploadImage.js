@@ -2,30 +2,10 @@ import React, { Component } from 'react'
 import '../styles/upload-image.css'
 import defaultImg from '../img/drag-and-drop.svg'
 
-export default class UploadImage extends Component {
-  
-  getURL = (fileName) => {
-    const url =  fetch()
-  }
-   
+export default class UploadImage extends Component {  
 
-  //Handle file drop 
-  dropHandler = (e) => {
-    //Prevent form submission
-    e.preventDefault()
-    console.log('drop')
-    //Change styling back to blue border 
-    const dropbox = document.querySelector('.dropbox')
-    dropbox.style.border = '3px dashed #2F80ED'
+  //Store upload image div in variable to change style on drag and drop events 
 
-    //Get file data for drop event and store filename
-    const fileName = e.dataTransfer.files[0]
-    console.log(fileName)
-
-    const url = this.getURL(fileName)
-  }
-
-  
   //Change border styling on drag in   
   dragInHandler = (e) => {
     e.preventDefault()
@@ -43,12 +23,28 @@ export default class UploadImage extends Component {
     console.log('dragged out')
   }
 
+  //Handle file drop 
+  dropHandler = (e) => {
+    //Prevent form submission
+    e.preventDefault()
+    console.log('drop')
+    //Change styling back to blue border 
+    const dropbox = document.querySelector('.dropbox')
+    dropbox.style.border = '3px dashed #2F80ED'
+
+    this.props.handleChange(e)
+  }
+
   //Hanlde CHOOSE A FILE button selection
   chooseFile = (e) => {
     console.log('file chosen')
-    console.log(e.target.files)
-  }
 
+    // Store fileName and update imageURL in parent component's state
+    const fileName = e.target.files[0].name
+    console.log(fileName)
+    this.props.handleChange(e, fileName)
+
+  }
 
 
   render() {

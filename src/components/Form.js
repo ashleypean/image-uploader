@@ -9,17 +9,20 @@ export default class Form extends Component {
     super(props)
     this.state = {
       step: 1,
-      imageUrl: 'asdf', 
+      imageURL: 'asdf', 
       validImage: true, 
-      uploadedImages: []
+      imageFile: ''
     }
+
+    this.nextStep = this.nextStep.bind(this)
+    this.resetForm = this.resetForm.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   //Go to next step in form 
   nextStep= () => {
-    const { step } = this.state
     this.setState({
-      step: step + 1
+      step: this.state.step + 1, 
     })
   }
 
@@ -31,15 +34,16 @@ export default class Form extends Component {
   }
 
   //Handle form changes
-  handleChange = e => {
+  handleChange = (e) => {
+    const url = URL.createObjectURL(e.dataTransfer.files[0]).toString()
+    console.log('Loading: ' + url)
     this.setState({
-      imageUrl: e.target.value 
-    })
-  }
+      imageURL: url 
+    }, () => this.nextStep()
+    )}
 
   render() {
     const { step } = this.state
-    const { imageUrl } = this.state
     switch(step) {
       //First form will prompt user to upload/drag and drop an image 
       case 1: 
@@ -48,7 +52,6 @@ export default class Form extends Component {
           nextStep={this.nextStep} 
           handleChange={this.handleChange} 
           imageUrl=''
-          uploadedImages={this.uploadedImages}
         /> 
       )
       
@@ -57,6 +60,7 @@ export default class Form extends Component {
         return (
             <ImageLoading 
             nextStep={this.nextStep}
+            imageURL={this.state.imageURL}
           />
         )
       
@@ -65,7 +69,7 @@ export default class Form extends Component {
           return (
               <Success 
               resetForm={this.resetForm}
-              imageUrl={imageUrl}
+              imageURL={this.state.imageURL}
             />
           )
 
