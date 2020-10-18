@@ -31,8 +31,10 @@ export default class UploadImage extends Component {
     //Change styling back to blue border 
     const dropbox = document.querySelector('.dropbox')
     dropbox.style.border = '3px dashed #2F80ED'
-
-    this.props.handleChange(e)
+    const fileObj = e.dataTransfer.files[0] || e.dataTransfer.getData('URL').toString()
+    console.log(fileObj)
+    console.log(fileObj)
+    this.props.handleChange(fileObj)
   }
 
   //Hanlde CHOOSE A FILE button selection
@@ -40,9 +42,9 @@ export default class UploadImage extends Component {
     console.log('file chosen')
 
     // Store fileName and update imageURL in parent component's state
-    const fileName = e.target.files[0].name
-    console.log(fileName)
-    this.props.handleChange(e, fileName)
+    const fileObj = e.target.files[0]
+    console.log(fileObj)
+    this.props.handleChange(fileObj)
 
   }
 

@@ -5,7 +5,9 @@ export default class ImageLoading extends Component {
 
   componentDidMount(){
     //Simulate a call to the server by loading for a few seconds 
-    const loading = () => setTimeout(this.props.nextStep, 1000)
+    const randomWaitTime = Math.random()*5000 + Math.random()*5000
+    console.log(randomWaitTime)
+    const loading = () => setTimeout(this.props.nextStep, randomWaitTime)
     loading()
   }
   

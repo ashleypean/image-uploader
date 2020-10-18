@@ -15,7 +15,7 @@ export default class Success extends Component {
     const copiedText = document.querySelector('.copied')
     console.log(copiedText)
     copiedText.style.visibility = 'visible'
-    setTimeout(() => copiedText.style.visibility = "hidden", 2000)
+    setTimeout(() => copiedText.style.visibility = 'hidden', 1000)
   }
   render() {
 
@@ -30,7 +30,7 @@ export default class Success extends Component {
           <input type="text" className="image-link" value={this.props.imageURL} disabled />
           <button className="copy" onClick={this.handleClick}>Copy Link</button>
         </form>
-        <p className="copied">Link Copied!</p>
+        <p className="copied">Link copied! </p>
     </div>
     )
   }
