@@ -4,13 +4,12 @@ import ImageLoading from './ImageLoading.js'
 import Success from './Success.js'
 import Failed from './Failed.js'
 import '../styles/form.css'
-import ErrorImg from '../img/404-placeholder.jpeg'
 
 export default class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      step: 4,
+      step: 1,
       imageURL: '', 
       validImage: true, 
       imageFile: ''
@@ -37,6 +36,7 @@ export default class Form extends Component {
 
   //Handle form changes
   handleChange = (fileObj) => {
+    //If user upload photo from the web, send to error page
     if(typeof fileObj !== 'object') {
       const img = new Image ()
       img.src = fileObj
@@ -46,7 +46,6 @@ export default class Form extends Component {
       })
     }else {
       const url = URL.createObjectURL(fileObj).toString()
-     console.log('Loading: ' + url)
      this.setState({
       imageURL: url 
       }, () => this.nextStep()

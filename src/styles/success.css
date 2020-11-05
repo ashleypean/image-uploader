@@ -1,7 +1,7 @@
 div.success {
   background: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  height: 50%;
+  height: 60%;
   width: 50%;
   padding: 1rem 2.3rem 2rem;
   margin: auto;
@@ -27,14 +27,16 @@ div.success h4 {
 
 div.success img.uploaded-image {
   height: 18rem;
+  object-fit: contain;
   width: auto;
 }
 
 form {
   width: 100%;
-  height: 10%;
-  margin: 5% 0;
-  padding: .3% 1%;
+  height: 7%;
+  min-height: 35px;
+  margin: 1% 0;
+  padding: .1% 0 .1% 1%;
   border: 1px solid #E0E0E0;
   background-color: #F6F8FB;
   border-radius: 8px;
@@ -55,24 +57,43 @@ input.image-link{
 
 form button {
   width: 25%;
-  height: 100%;
-  margin: 0;
+  height: 95%;
+  margin: auto;
   background-color: #2F80ED;
   border: none;
   border-radius: 8px;
-  padding: .9rem .5rem;
+  padding: .5% 1%;
   color: white;
+  outline: none;
+  cursor: pointer;
 }
 
 form button:hover, form button:active {
   background-color: #0d4184;
 }
 
-p.copied {
+p.upload-another {
   visibility: hidden;
   color: #3ABEA6;
   text-align: center;
-  margin: 0;
+  margin: 0 0 10px 0;
+  font-size: 12px;
+}
+
+button.upload-another {
+  visibility: hidden;
+  border: none;
+  border-radius: 4px;
+  margin-top: 5%;
+  background-color: #2F80ED;
+  color: white;
+  height: 7%;
+  margin: 0; 
+  cursor: pointer;
+}
+
+button.upload-another:hover, button.upload-another:active {
+  background-color: #0d4184;
 }
 
 

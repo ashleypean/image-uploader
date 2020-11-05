@@ -4,8 +4,6 @@ import Error from '../img/404-blue.png'
 import '../styles/failed.css'
 
 export default class Failed extends Component {
-
-
   render() {
     return (
       <div className="failed"> 

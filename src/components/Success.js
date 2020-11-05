@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 import '../styles/success.css'
 import Checkmark from '../img/checkmark.svg'
-import Error from '../img/404-placeholder.jpeg'
+import Error from '../img/404-green.png'
 
 export default class Success extends Component {
-  componentDidMount() {
-    console.log('Success: ' + this.props.imageURL)
-  }
 
   handleClick(e) {
     e.preventDefault()
-    const url = document.querySelector('.image-link').value
-    navigator.clipboard.writeText(url)
-    const copiedText = document.querySelector('.copied')
-    console.log(copiedText)
-    copiedText.style.visibility = 'visible'
-    setTimeout(() => copiedText.style.visibility = 'hidden', 1000)
+    const URL = document.querySelector('input.image-link').value
+    window.open(URL, "_blank")
+    console.log(URL)
+
+    document.querySelectorAll('.upload-another').forEach(x => {
+      x.style.visibility = 'visible' 
+    })
   }
+
+  uploadAnother = () => {
+    this.props.resetForm()
+  }
+
   render() {
 
     return (
@@ -27,10 +30,11 @@ export default class Success extends Component {
         alt="" 
         className="uploaded-image" />
         <form>
-          <input type="text" className="image-link" value={this.props.imageURL} disabled />
-          <button className="copy" onClick={this.handleClick}>Copy Link</button>
+          <input type="text" className="image-link" value={this.props.imageURL} placeholder="Image not available" disabled />
+          <button className="open" onClick={this.handleClick}>Open</button>
         </form>
-        <p className="copied">Link copied! </p>
+        <p className="upload-another"> Would you like to upload another photo? </p>
+        <button className="upload-another" onClick={this.uploadAnother}>Upload</button>
     </div>
     )
   }

@@ -11,7 +11,7 @@ export default class UploadImage extends Component {
     e.preventDefault()
     const dropbox = document.querySelector('.dropbox')
     dropbox.style.border = '3px dashed green'
-    console.log('dragged in')
+    //console.log('dragged in')
     
   }
 
@@ -20,30 +20,30 @@ export default class UploadImage extends Component {
     e.preventDefault()
     const dropbox = document.querySelector('.dropbox')
     dropbox.style.border = '3px dashed #2F80ED'
-    console.log('dragged out')
+    //console.log('dragged out')
   }
 
   //Handle file drop 
   dropHandler = (e) => {
     //Prevent form submission
     e.preventDefault()
-    console.log('drop')
+    //console.log('drop')
     //Change styling back to blue border 
     const dropbox = document.querySelector('.dropbox')
     dropbox.style.border = '3px dashed #2F80ED'
     const fileObj = e.dataTransfer.files[0] || e.dataTransfer.getData('URL').toString()
-    console.log(fileObj)
-    console.log(fileObj)
+    //console.log(fileObj)
+    //console.log(fileObj)
     this.props.handleChange(fileObj)
   }
 
   //Hanlde CHOOSE A FILE button selection
   chooseFile = (e) => {
-    console.log('file chosen')
+    //console.log('file chosen')
 
     // Store fileName and update imageURL in parent component's state
     const fileObj = e.target.files[0]
-    console.log(fileObj)
+    //console.log(fileObj)
     this.props.handleChange(fileObj)
 
   }
@@ -62,7 +62,7 @@ export default class UploadImage extends Component {
         <p className="or">Or</p>
         <label className="choose-file" onChange={this.chooseFile}>
           Choose a file
-          <input type="file" accept="image/png, image/jpeg" /> 
+          <input type="file" accept="image/*" /> 
         </label>
         
      </div>

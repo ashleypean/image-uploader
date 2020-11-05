@@ -17,3 +17,7 @@ body {
   align-content: flex-end;
   align-items: center;
 }
+
+div.App div {
+  max-width: 350px;
+}
